@@ -1,4 +1,5 @@
 import { useState } from "react";
+import BackToPortfolio from "@/components/BackToPortfolio";
 
 function predictScore(hours: number, prevScore: number, attendance: number) {
   // Linear regression simulation
