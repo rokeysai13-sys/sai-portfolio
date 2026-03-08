@@ -1,4 +1,5 @@
 import { useRef, useState, useEffect } from "react";
+import BackToPortfolio from "@/components/BackToPortfolio";
 
 export default function DigitRecognizer() {
   const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -94,7 +95,7 @@ export default function DigitRecognizer() {
   return (
     <div style={{ minHeight: "100vh", background: "#0d0d0d", color: "#e8e0d4", fontFamily: "'Inter',sans-serif" }}>
       <div style={{ maxWidth: 800, margin: "0 auto", padding: "3rem 1.5rem" }}>
-        <a href="/portfolio.html#projects" style={{ color: "#B7AB98", fontSize: ".75rem", letterSpacing: ".15em", textDecoration: "none", fontFamily: "'JetBrains Mono',monospace" }}>← BACK TO PORTFOLIO</a>
+        <BackToPortfolio />
 
         <h1 style={{ fontFamily: "'Playfair Display',serif", fontSize: "clamp(2rem,5vw,3.5rem)", fontWeight: 700, margin: "2rem 0 .5rem", lineHeight: .95 }}>
           Digit<br /><span style={{ color: "#B7AB98" }}>Recognizer</span>
