@@ -16,6 +16,17 @@
   </head>
 
   <body>
+    <script>
+      // Restore SPA route from GitHub Pages 404 redirect
+      (function(){
+        var params = new URLSearchParams(window.location.search);
+        var route = params.get('route');
+        if (route) {
+          var base = '/sai-portfolio';
+          window.history.replaceState(null, '', base + route);
+        }
+      })();
+    </script>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>
