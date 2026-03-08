@@ -2,7 +2,8 @@ import { useEffect } from "react";
 
 const Index = () => {
   useEffect(() => {
-    window.location.href = import.meta.env.BASE_URL + "portfolio.html";
+    const base = import.meta.env.BASE_URL.endsWith('/') ? import.meta.env.BASE_URL : import.meta.env.BASE_URL + '/';
+    window.location.href = base + "portfolio.html";
   }, []);
 
   return (
