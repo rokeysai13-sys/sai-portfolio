@@ -681,8 +681,15 @@ var ldIv=setInterval(function(){
 /* ── PROJECT NAVIGATION ─────────────────── */
 function navigateToProject(path) {
   // Detect base path dynamically
-  var basePath = window.location.pathname.replace(/\/portfolio\.html$/, '').replace(/\/$/, '');
-  window.location.href = basePath + '/' + path;
+  var pathname = window.location.pathname;
+  // Remove portfolio.html and any trailing slashes
+  var basePath = pathname.replace(/\/portfolio\.html$/, '').replace(/\/$/, '');
+  // If we're at root or basePath is empty, use origin only
+  if (!basePath || basePath === '') {
+    window.location.href = window.location.origin + '/' + path;
+  } else {
+    window.location.href = window.location.origin + basePath + '/' + path;
+  }
 }
 
 /* ── HERO NAME LETTERS ─────────────────── */
